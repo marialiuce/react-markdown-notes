@@ -56,7 +56,6 @@ Make sure you have **Node.js** installed on your computer.
    npm run dev
 
 5. **Open your browser:**
-   ```bash
 The project will usually start at http://localhost:5173.
 
 ## License
