@@ -5,11 +5,11 @@
 ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=flat&logo=vite&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=flat&logo=tailwind-css&logoColor=white)
 
-> A fully functional Markdown note-taking application built with React. It features a responsive layout, live markdown preview, and data persistence using LocalStorage.
+A fully functional Markdown note-taking application built with React. It features a responsive layout, live markdown preview, and data persistence using LocalStorage.
 
 ##  Live Demo
 
-👉 **[Click here to try the application](https://react-markdown-notes-tan.vercel.app/)**
+**[Click here to try the application](https://react-markdown-notes-tan.vercel.app/)**
 
 ##  Features
 
