@@ -60,7 +60,7 @@ function App() {
     <div className="min-h-screen bg-brand-dark flex flex-col text-text-primary font-sans">
       
       <header className="bg-brand-blue p-6 text-center shadow-lg z-10 flex justify-between items-center">
-        <div className="w-8"></div> {/* Espaçador para centralizar o título */}
+        <div className="w-8"></div>
         <h1 className="text-white text-2xl font-bold tracking-wider uppercase drop-shadow-sm">
           My Notes in Markdown
         </h1>

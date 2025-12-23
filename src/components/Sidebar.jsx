@@ -5,12 +5,12 @@ const Sidebar = ({ notas, adicionarNota, notaAtiva, aoSelecionar, onDelete }) =>
   const obterTitulo = (texto) => {
     const linhas = texto.split('\n');
     const primeiraLinha = linhas[0];
-    return primeiraLinha.replace(/^#\s*/, '') || "Untitled";
+    return primeiraLinha.replace(/^#\s*/, '') || "Untitled Note";
   };
 
   const obterResumo = (texto) => {
     const linhas = texto.split('\n');
-    return linhas[1] || "No additional content...";
+    return linhas[1] || "No content...";
   };
 
   return (
