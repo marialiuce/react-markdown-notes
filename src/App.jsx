@@ -59,7 +59,6 @@ function App() {
   return (
     <div className="min-h-screen bg-brand-dark flex flex-col text-text-primary font-sans">
       
-      {/* Cabeçalho */}
       <header className="bg-brand-blue p-6 text-center shadow-lg z-10 flex justify-between items-center">
         <div className="w-8"></div> {/* Espaçador para centralizar o título */}
         <h1 className="text-white text-2xl font-bold tracking-wider uppercase drop-shadow-sm">
@@ -68,10 +67,8 @@ function App() {
         <div className="text-white text-sm opacity-80">v1.0</div>
       </header>
 
-      {/* Área Principal */}
       <main className="flex-grow flex overflow-hidden p-6 gap-6">
         
-        {/* Sidebar */}
         <Sidebar 
           notas={notas} 
           adicionarNota={criarNovaNota} 
@@ -80,7 +77,6 @@ function App() {
           onDelete={deletarNota}
         />
 
-        {/* Editor ou Tela de Boas-vindas */}
         {notas.length > 0 ? (
           <Editor 
             notaAtual={encontrarNotaAtiva()} 
