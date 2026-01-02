@@ -5,55 +5,56 @@ import { nanoid } from 'nanoid';
 import './App.css'; 
 
 function App() {
-  const [notas, setNotas] = useState(() => {
-    const notasSalvas = localStorage.getItem('notas-markdown');
-    return notasSalvas ? JSON.parse(notasSalvas) : [];
+  const [notes, setNotes] = useState(() => {
+    const savedNotes = localStorage.getItem('notes-data');
+    return savedNotes ? JSON.parse(savedNotes) : [];
   });
 
-  const [notaAtualId, setNotaAtualId] = useState(
-    (notas[0] && notas[0].id) || ""
+  const [currentNoteId, setCurrentNoteId] = useState(
+    (notes[0] && notes[0].id) || ""
   );
 
   useEffect(() => {
-    localStorage.setItem('notas-markdown', JSON.stringify(notas));
-  }, [notas]);
+    localStorage.setItem('notes-data', JSON.stringify(notes));
+  }, [notes]);
 
-  function criarNovaNota() {
-    const novaNota = {
+  function createNewNote() {
+    const newNote = {
       id: nanoid(),
       body: "# Note Title\nStart writing..."
     };
-    setNotas([novaNota, ...notas]);
-    setNotaAtualId(novaNota.id);
+    setNotes([newNote, ...notes]);
+    setCurrentNoteId(newNote.id);
   }
 
-  function atualizarNota(texto) {
-    setNotas(oldNotas => {
-      const novaLista = [];
-      for(let i = 0; i < oldNotas.length; i++) {
-         const notaAntiga = oldNotas[i];
-         if(notaAntiga.id === notaAtualId) {
-             novaLista.unshift({ ...notaAntiga, body: texto });
+  function updateNote(text) {
+    setNotes(oldNotes => {
+      const newArray = [];
+      for(let i = 0; i < oldNotes.length; i++) {
+         const oldNote = oldNotes[i];
+         if(oldNote.id === currentNoteId) {
+             newArray.unshift({ ...oldNote, body: text });
          } else {
-             novaLista.push(notaAntiga);
+             newArray.push(oldNote);
          }
       }
-      return novaLista;
+      return newArray;
     });
   }
 
-  function deletarNota(idDaNota, event) {
+  function deleteNote(noteId, event) {
     event.stopPropagation();
-    const novaLista = notas.filter(nota => nota.id !== idDaNota);
-    setNotas(novaLista);
-    if (idDaNota === notaAtualId) {
-       const novoId = novaLista.length > 0 ? novaLista[0].id : "";
-       setNotaAtualId(novoId);
+    const newNotes = notes.filter(note => note.id !== noteId);
+    setNotes(newNotes);
+    
+    if (noteId === currentNoteId) {
+       const newId = newNotes.length > 0 ? newNotes[0].id : "";
+       setCurrentNoteId(newId);
     }
   }
 
-  function encontrarNotaAtiva() {
-    return notas.find(nota => nota.id === notaAtualId) || notas[0];
+  function findCurrentNote() {
+    return notes.find(note => note.id === currentNoteId) || notes[0];
   }
 
   return (
@@ -70,23 +71,23 @@ function App() {
       <main className="flex-grow flex overflow-hidden p-6 gap-6">
         
         <Sidebar 
-          notas={notas} 
-          adicionarNota={criarNovaNota} 
-          notaAtiva={notaAtualId} 
-          aoSelecionar={setNotaAtualId}
-          onDelete={deletarNota}
+          notes={notes} 
+          newNote={createNewNote} 
+          currentNoteId={currentNoteId} 
+          setCurrentNoteId={setCurrentNoteId}
+          deleteNote={deleteNote}
         />
 
-        {notas.length > 0 ? (
+        {notes.length > 0 ? (
           <Editor 
-            notaAtual={encontrarNotaAtiva()} 
-            atualizarNota={atualizarNota} 
+            currentNote={findCurrentNote()} 
+            updateNote={updateNote} 
           />
         ) : (
           <div className="flex-grow flex flex-col items-center justify-center bg-brand-dark/50 rounded-xl border-2 border-dashed border-brand-blue/30 text-brand-blue p-10">
             <p className="text-xl font-medium opacity-80">Your desk is clean!</p>
             <button 
-              onClick={criarNovaNota}
+              onClick={createNewNote}
               className="mt-4 px-6 py-2 bg-brand-blue text-white rounded-lg hover:bg-opacity-90 transition-all"
             >
               Create first note
