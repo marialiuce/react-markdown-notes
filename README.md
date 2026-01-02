@@ -7,14 +7,12 @@
 
 A fully functional Markdown note-taking application built with React. It features a responsive layout, live markdown preview, and data persistence using LocalStorage.
 
-##  Live Demo
-
-**[Click here to try the application](https://react-markdown-notes-tan.vercel.app/)**
+**Live Demo:** https://react-markdown-notes-tan.vercel.app/
 
 ##  Features
 
 - **Post-it UI**: Sidebar designed with yellow sticky notes for a familiar and creative look.
-- **Vertical Split Editor**: Layout optimized for focus — write on the top pane, preview the rendered Markdown instantly on the bottom pane.
+- **Vertical Split Editor**: Layout optimized, write on the top pane, preview the rendered Markdown instantly on the bottom pane.
 - **CRUD Operations**: Create, Read, Update, and Delete notes seamlessly.
 - **Auto-Save**: Changes are automatically persisted to the browser's LocalStorage.
 - **Smart Navigation**: Intelligent selection logic (auto-selects the next note) when deleting items.
@@ -58,7 +56,5 @@ Make sure you have **Node.js** installed on your computer.
 5. **Open your browser:**
 The project will usually start at http://localhost:5173.
 
-## License
-This project is open source and available under the MIT License.
 
 
