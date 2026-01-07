@@ -1,60 +1,40 @@
-# React Markdown Notes
+# Markdown Notes
 
-![Project Status](https://img.shields.io/badge/status-complete-green)
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=flat&logo=react&logoColor=%2361DAFB)
-![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=flat&logo=vite&logoColor=white)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=flat&logo=react&logoColor=%2361DAFB) 
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=flat&logo=vite&logoColor=white) 
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=flat&logo=tailwind-css&logoColor=white)
 
-A fully functional Markdown note-taking application built with React. It features a responsive layout, live markdown preview, and data persistence using LocalStorage.
+A responsive web application that offers a clean, distraction-free environment for writing Markdown. It features a unique "sticky note" interface, live split-pane preview, and automatic data persistence using LocalStorage.
 
-**Live Demo:** https://react-markdown-notes-tan.vercel.app/
+[Live Demo](https://react-markdown-notes-tan.vercel.app/)
 
-##  Features
+## Technologies
 
-- **Post-it UI**: Sidebar designed with yellow sticky notes for a familiar and creative look.
-- **Vertical Split Editor**: Layout optimized, write on the top pane, preview the rendered Markdown instantly on the bottom pane.
-- **CRUD Operations**: Create, Read, Update, and Delete notes seamlessly.
-- **Auto-Save**: Changes are automatically persisted to the browser's LocalStorage.
-- **Smart Navigation**: Intelligent selection logic (auto-selects the next note) when deleting items.
-- **Polished UX**: Custom scrollbars, Inter typography, and responsive design using Tailwind CSS.
+`React` `Tailwind CSS` `Vite` `JavaScript` `React Markdown` `LocalStorage`
 
-##  Technologies Used
+## Features
 
-- **React.js**: Core component-based library.
-- **Vite**: Next-generation frontend tooling for fast builds.
-- **Tailwind CSS**: Utility-first CSS framework for custom design and responsiveness.
-- **React Markdown**: Safe and efficient Markdown rendering.
-- **Nanoid**: Unique ID generation for data integrity.
-- **LocalStorage API**: Client-side data persistence.
+* Real-time Markdown rendering with a vertical split-pane layout
+* CRUD operations (Create, Read, Update, Delete) for notes
+* Custom "Post-it" UI design with dynamic selection states
+* Automatic data persistence to the browser's LocalStorage
+* Smart navigation logic that handles note deletion seamlessly
+* Fully responsive layout adapted for desktop and mobile workflows
 
-## Getting Started
+## The Process
 
-Follow these steps to run the project locally on your machine.
+This project started as a challenge to master React state management and side effects without relying on a backend. The main goal was to build a functional text editor that persists data between sessions.
 
-### Prerequisites
+## Running the Project
 
-Make sure you have **Node.js** installed on your computer.
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Run development server: `npm run dev`
+4. Open `http://localhost:5173` in your browser
 
-### Installation Steps
+## Preview
 
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/marialiuce/react-markdown-notes.git](https://github.com/marialiuce/react-markdown-notes.git)
-
-2. **Navigate to the project folder:**
-   ```bash
-   cd react-markdown-notes 
-
-3. **Install dependencies:**
-   ```bash
-   npm install
-
-4. **Run the development server:**
-   ```bash
-   npm run dev
-
-5. **Open your browser:**
-The project will usually start at http://localhost:5173.
+https://github.com/user-attachments/assets/31e360ba-d218-4c42-9171-1b993f8a36ce
 
 
 
